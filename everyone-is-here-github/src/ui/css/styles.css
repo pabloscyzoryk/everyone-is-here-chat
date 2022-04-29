@@ -1,0 +1,253 @@
+/* imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* base */
+
+:root {
+    --shadow-color: #3bdeff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    background: #03254B;
+}
+
+header {
+    z-index: 1;
+    font-size: 1.75em;
+    background: #031d38;
+    color: #3bdeff;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    padding: 0.35vw;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 42px var(--shadow-color),
+    0 0 82px var(--shadow-color),
+    0 0 151px var(--shadow-color);
+    animation: pulsate 2s infinite alternate;
+}
+
+main {
+    z-index: 0;
+    position: relative;
+    height: 95vh;
+    width: 80vw;
+    background: #002d61;
+    display: block;
+}
+
+ul {
+    margin: 4vw;
+    margin-top: 5vw;
+}
+
+.chat-element {
+    list-style-type: none;
+    background-color: rgb(255, 255, 255);
+    max-width: 30vw;
+    min-width: 5vw;
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 900px;
+    max-height: 20vh;
+    height: auto;
+    word-wrap: break-word;
+}
+
+li {
+    list-style-type: none;
+    max-width: 30vw;
+    max-height: 20vh;
+}
+
+footer {
+    color: #3bdeff;
+    position: absolute;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 42px var(--shadow-color),
+    0 0 82px var(--shadow-color),
+    0 0 151px var(--shadow-color);
+    animation: pulsate 2s infinite alternate;
+    right: 15vw;
+    bottom: 1vh;
+
+}
+
+@keyframes pulsate {
+    100% {
+      /* Larger blur radius */
+      text-shadow:
+        0 0 8px #fff,
+        0 0 35px var(--shadow-color),
+        0 0 80px var(--shadow-color),
+        0 0 120px var(--shadow-color);
+    }
+    0% {
+      /* Smaller blur radius */
+      text-shadow:
+        0 0 1px #fff,
+        0 0 15px var(--shadow-color),
+        0 0 45px var(--shadow-color),
+        0 0 50px var(--shadow-color);
+    }
+  }
+
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.chat {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 95vh;
+}
+
+.from {
+    position: relative;
+    top: 2vh;
+    left: 3vw;
+    color: white;
+}
+
+.send {
+    color: white;
+    position: relative;
+    top: -1.75vh;
+    left: 18.5vw;
+}
+
+.nick {
+    position: fixed;
+    bottom: 25vh;
+    right: 25vw;
+    font-size: 1.1em;
+    width: 15vw;
+    border-radius: 900px;
+    height: 4em;
+    padding: 1vw;
+}
+
+.textmessage {
+    position: fixed;
+    bottom: 15vh;
+    right: 25vw;
+    font-size: 1.1em;
+    width: 15vw;
+    border-radius: 900px;
+    height: 4em;
+    padding: 1vw;
+}
+
+.send-icon {
+    position: fixed;
+    bottom: 15vh;
+    right: 18vw;
+    font-size: 1.6em;
+    width: 4vw;
+    border-radius: 900px;
+    height: 4vw;
+    padding: 1vw;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.send-icon i {
+    transition: 0.2s ease-in-out;
+}
+
+.send-icon:hover i {
+    font-size: 1.3em;
+}
+
+.submit {
+    display: none;
+}
+
+.chat {
+    position: relative;
+    top: 5vh;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 769px) {
+    .chat-element {
+        border-radius: 30px;
+    }
+    .from {
+        top: 1.5vh;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 563px){
+    .chat-element {
+        border-radius: 5px;
+    }
+    .from {
+        top: 0.4vh;
+    }
+    .send {
+        top: 0.1vh;
+    }
+    .nick, .textmessage {
+        border-radius: 5px;
+        width: 25vw;
+    }
+    .send-icon {
+        height: 6vw;
+        width: 6vw;
+    }
+}
+
+@media screen and (max-width: 562px) {
+    .chat-element {
+        border-radius: 5px;
+    }
+    .from {
+        top: 0.4vh;
+    }
+    .send {
+        top: 0.1vh;
+    }
+    .nick, .textmessage {
+        border-radius: 5px;
+        width: 25vw;
+        right: 20vw;
+    }
+    .send-icon {
+        height: 6vw;
+        width: 6vw;
+        right: 12.5vw;
+    }
+    li {
+        margin: 2vw;
+        max-width: 40vw;
+    }
+    .chat-element {
+        margin: 2vw;
+        max-width: 40vw;
+    }
+}
